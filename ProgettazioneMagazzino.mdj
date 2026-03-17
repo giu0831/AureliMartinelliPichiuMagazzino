@@ -933,6 +933,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
+											"left": 1744,
+											"top": -352,
 											"height": 13
 										},
 										{
@@ -943,8 +945,8 @@
 											},
 											"font": "Arial;13;1",
 											"parentStyle": true,
-											"left": 429,
-											"top": 359,
+											"left": 1301,
+											"top": 183,
 											"width": 79.01904296875,
 											"height": 13,
 											"text": "GestioneFile"
@@ -958,6 +960,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
+											"left": 1744,
+											"top": -352,
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -971,14 +975,16 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
+											"left": 1744,
+											"top": -352,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 424,
-									"top": 352,
+									"left": 1296,
+									"top": 176,
 									"width": 89.01904296875,
 									"height": 25,
 									"stereotypeLabel": {
@@ -1005,8 +1011,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 424,
-									"top": 377,
+									"left": 1296,
+									"top": 201,
 									"width": 89.01904296875,
 									"height": 10
 								},
@@ -1021,8 +1027,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 424,
-									"top": 387,
+									"left": 1296,
+									"top": 211,
 									"width": 89.01904296875,
 									"height": 10
 								},
@@ -1038,6 +1044,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
+									"left": 872,
+									"top": -176,
 									"width": 10,
 									"height": 10
 								},
@@ -1053,6 +1061,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
+									"left": 872,
+									"top": -176,
 									"width": 10,
 									"height": 10
 								}
@@ -1060,8 +1070,8 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"containerChangeable": true,
-							"left": 424,
-							"top": 352,
+							"left": 1296,
+							"top": 176,
 							"width": 88.01904296875,
 							"height": 45,
 							"nameCompartment": {
