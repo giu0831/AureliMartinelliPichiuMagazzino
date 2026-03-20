@@ -5,16 +5,19 @@
 package aurelimartinellipichiumagazzino;
 
 /**
+ * Main
  *
- * @author aureli.giulia
+ * @author Aureli Giulia, Martinelli Alessandra, Pichiu Florin
  */
 public class AureliMartinelliPichiuMagazzino {
 
     /**
-     * @param args the command line arguments
+     * @param args
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Codice per aprire FrmMagazzino
+        FrmMagazzino frmMagazzino = new FrmMagazzino();
+        frmMagazzino.setVisible(true);
     }
-    
+
 }
