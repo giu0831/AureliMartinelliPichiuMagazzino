@@ -47,7 +47,7 @@ public class FrmProdotto extends javax.swing.JFrame {
 
         jRadioButton1.setText("jRadioButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Aggiungi nuovo prodotto");
 
         pnlNuovoProdotto.setBackground(new java.awt.Color(246, 246, 246));
@@ -74,6 +74,11 @@ public class FrmProdotto extends javax.swing.JFrame {
 
         btnAnnulla.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnAnnulla.setText("Annulla");
+        btnAnnulla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnnullaActionPerformed(evt);
+            }
+        });
 
         btnSalva.setBackground(new java.awt.Color(102, 102, 255));
         btnSalva.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
@@ -185,6 +190,14 @@ public class FrmProdotto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * Bottone per chiudere la frame
+     * @param evt 
+     */
+    private void btnAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnnullaActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnAnnullaActionPerformed
 
     /**
      * @param args the command line arguments
