@@ -31,6 +31,10 @@ public class FrmMagazzino extends javax.swing.JFrame {
         pnlGestioneMagazzino = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGestioneMagazzino = new javax.swing.JTable();
+        btnAnnulla = new javax.swing.JButton();
+        btnElimina = new javax.swing.JButton();
+        btnElimina1 = new javax.swing.JButton();
+        btnElimina2 = new javax.swing.JButton();
         pnlTitoloGestioneMagazzino = new javax.swing.JPanel();
         lblGestioneMagazzino = new javax.swing.JLabel();
         btnNuovoProdotto = new javax.swing.JButton();
@@ -41,29 +45,29 @@ public class FrmMagazzino extends javax.swing.JFrame {
 
         tblGestioneMagazzino.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nome", "Acquisto", "Vendita", "Scorta", "Stato"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -74,21 +78,58 @@ public class FrmMagazzino extends javax.swing.JFrame {
         tblGestioneMagazzino.setSelectionBackground(new java.awt.Color(216, 216, 216));
         jScrollPane1.setViewportView(tblGestioneMagazzino);
 
+        btnAnnulla.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnAnnulla.setText("Annulla");
+
+        btnElimina.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnElimina.setText("Vendi");
+
+        btnElimina1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnElimina1.setText("Elimina");
+
+        btnElimina2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnElimina2.setText("Rifornisci");
+
         javax.swing.GroupLayout pnlGestioneMagazzinoLayout = new javax.swing.GroupLayout(pnlGestioneMagazzino);
         pnlGestioneMagazzino.setLayout(pnlGestioneMagazzinoLayout);
         pnlGestioneMagazzinoLayout.setHorizontalGroup(
             pnlGestioneMagazzinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlGestioneMagazzinoLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(pnlGestioneMagazzinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnElimina2)
+                    .addComponent(btnElimina, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnElimina1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(pnlGestioneMagazzinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlGestioneMagazzinoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(btnAnnulla)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         pnlGestioneMagazzinoLayout.setVerticalGroup(
             pnlGestioneMagazzinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGestioneMagazzinoLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(pnlGestioneMagazzinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlGestioneMagazzinoLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(btnElimina2)
+                        .addGap(49, 49, 49)
+                        .addComponent(btnElimina)
+                        .addGap(49, 49, 49)
+                        .addComponent(btnElimina1)
+                        .addContainerGap(79, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGestioneMagazzinoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))))
+            .addGroup(pnlGestioneMagazzinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlGestioneMagazzinoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(btnAnnulla)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pnlTitoloGestioneMagazzino.setBackground(new java.awt.Color(102, 102, 255));
@@ -133,7 +174,9 @@ public class FrmMagazzino extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlTitoloGestioneMagazzino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlGestioneMagazzino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlGestioneMagazzino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,6 +225,10 @@ public class FrmMagazzino extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAnnulla;
+    private javax.swing.JButton btnElimina;
+    private javax.swing.JButton btnElimina1;
+    private javax.swing.JButton btnElimina2;
     private javax.swing.JButton btnNuovoProdotto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblGestioneMagazzino;
