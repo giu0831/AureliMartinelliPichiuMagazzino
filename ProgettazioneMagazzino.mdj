@@ -50,7 +50,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": -624,
-											"top": -32,
+											"top": -48,
 											"height": 13
 										},
 										{
@@ -62,7 +62,7 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 109,
-											"top": 151,
+											"top": 143,
 											"width": 281.71875,
 											"height": 13,
 											"text": "Magazzino"
@@ -77,7 +77,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": -624,
-											"top": -32,
+											"top": -48,
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -92,7 +92,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": -624,
-											"top": -32,
+											"top": -48,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
@@ -100,7 +100,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 104,
-									"top": 144,
+									"top": 136,
 									"width": 291.71875,
 									"height": 25,
 									"stereotypeLabel": {
@@ -138,17 +138,17 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 109,
-											"top": 174,
+											"top": 166,
 											"width": 281.71875,
 											"height": 13,
-											"text": "-listaProdotti: ArrayList<Prodotto>",
+											"text": "-listaProdotti: HashSet<Prodotto>",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 104,
-									"top": 169,
+									"top": 161,
 									"width": 291.71875,
 									"height": 23
 								},
@@ -174,7 +174,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 109,
-											"top": 197,
+											"top": 189,
 											"width": 281.71875,
 											"height": 13,
 											"text": "+Magazzino()",
@@ -192,7 +192,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 109,
-											"top": 212,
+											"top": 204,
 											"width": 281.71875,
 											"height": 13,
 											"text": "+getListaProdotti(): ArrayList<Prodotto>",
@@ -210,7 +210,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 109,
-											"top": 227,
+											"top": 219,
 											"width": 281.71875,
 											"height": 13,
 											"text": "+registraProdotto(p: Prodotto): boolean",
@@ -228,7 +228,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 109,
-											"top": 242,
+											"top": 234,
 											"width": 281.71875,
 											"height": 13,
 											"text": "+controlloPresenzaProdotto(ID: int): boolean",
@@ -246,7 +246,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 109,
-											"top": 257,
+											"top": 249,
 											"width": 281.71875,
 											"height": 13,
 											"text": "+rimuoviProdotto(ID: int): boolean",
@@ -264,7 +264,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 109,
-											"top": 272,
+											"top": 264,
 											"width": 281.71875,
 											"height": 13,
 											"text": "+trovaProdottoID(ID: int): Prodotto",
@@ -274,7 +274,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 104,
-									"top": 192,
+									"top": 184,
 									"width": 291.71875,
 									"height": 98
 								},
@@ -291,7 +291,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": -312,
-									"top": -16,
+									"top": -24,
 									"width": 10,
 									"height": 10
 								},
@@ -308,7 +308,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": -312,
-									"top": -16,
+									"top": -24,
 									"width": 10,
 									"height": 10
 								}
@@ -317,7 +317,7 @@
 							"parentStyle": false,
 							"containerChangeable": true,
 							"left": 104,
-							"top": 144,
+							"top": 136,
 							"width": 290.71875,
 							"height": 146,
 							"nameCompartment": {
@@ -1452,7 +1452,7 @@
 							},
 							"name": "listaProdotti",
 							"visibility": "private",
-							"type": "ArrayList<Prodotto>"
+							"type": "HashSet<Prodotto>"
 						}
 					],
 					"operations": [
