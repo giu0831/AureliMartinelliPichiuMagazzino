@@ -207,9 +207,20 @@ public class FrmProdotto extends javax.swing.JFrame {
         scortaIniziale = Integer.parseInt(txtScortaIniziale.getText()), 
         scortaMinima = Integer.parseInt(txtScortaMinima.getText());
         String nome = txtNomeProdotto.getText();
+        svuotaTextBox();
         GestioneMagazzino.getMagazzino().registraProdotto(new Prodotto(id, nome, prezzoAcquisto, prezzoVendita, scortaIniziale, scortaMinima));
     }//GEN-LAST:event_btnAggiungiActionPerformed
 
+    /**
+     * Metodo per svuotare le textbox
+     */
+    private void svuotaTextBox(){
+        txtNomeProdotto.setText("");
+        txtPrezzoAcquisto.setText("");
+        txtPrezzoVendita.setText("");
+        txtScortaIniziale.setText("");
+        txtScortaMinima.setText("");
+    }
     /**
      * @param args the command line arguments
      */

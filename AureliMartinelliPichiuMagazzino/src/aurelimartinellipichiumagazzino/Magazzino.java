@@ -56,7 +56,7 @@ public class Magazzino {
      * @param id id del prodotto
      * @return prodotto corrispondente all'id
      */
-    private Prodotto trovaProdottoPerId(int id){
+    public Prodotto trovaProdottoPerId(int id){
         for(Prodotto p : listaProdotti){
             if(p.getId() == id) return p;
         }
