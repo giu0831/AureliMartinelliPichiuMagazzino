@@ -41,7 +41,7 @@ public class FrmProdotto extends javax.swing.JFrame {
         txtScortaMinima = new javax.swing.JTextField();
         txtPrezzoVendita = new javax.swing.JTextField();
         btnAnnulla = new javax.swing.JButton();
-        btnSalva = new javax.swing.JButton();
+        btnAggiungi = new javax.swing.JButton();
         pnlTitoloNuovoProdotto = new javax.swing.JPanel();
         lblNuovoProdotto = new javax.swing.JLabel();
 
@@ -80,10 +80,15 @@ public class FrmProdotto extends javax.swing.JFrame {
             }
         });
 
-        btnSalva.setBackground(new java.awt.Color(102, 102, 255));
-        btnSalva.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-        btnSalva.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalva.setText("Salva");
+        btnAggiungi.setBackground(new java.awt.Color(102, 102, 255));
+        btnAggiungi.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnAggiungi.setForeground(new java.awt.Color(255, 255, 255));
+        btnAggiungi.setText("Aggiungi");
+        btnAggiungi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAggiungiActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlNuovoProdottoLayout = new javax.swing.GroupLayout(pnlNuovoProdotto);
         pnlNuovoProdotto.setLayout(pnlNuovoProdottoLayout);
@@ -99,18 +104,14 @@ public class FrmProdotto extends javax.swing.JFrame {
                         .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
                             .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(34, 34, 34)
-                            .addComponent(btnSalva, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnAggiungi, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlNuovoProdottoLayout.createSequentialGroup()
                             .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblScortaIniziale)
                                 .addComponent(txtScortaIniziale, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
-                                    .addComponent(lblPrezzoAcquisto)
-                                    .addGap(34, 34, 34))
-                                .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
-                                    .addComponent(txtPrezzoAcquisto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(21, 21, 21)))
-                            .addGap(10, 10, 10)
+                                .addComponent(lblPrezzoAcquisto)
+                                .addComponent(txtPrezzoAcquisto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(31, 31, 31)
                             .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblPrezzoVendita)
                                 .addComponent(txtScortaMinima, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,7 +145,7 @@ public class FrmProdotto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalva, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAggiungi, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -199,6 +200,16 @@ public class FrmProdotto extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAnnullaActionPerformed
 
+    private void btnAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiungiActionPerformed
+        int id = GestioneMagazzino.getMagazzino().getListaProdotti().size(),
+        prezzoAcquisto = Integer.parseInt(txtPrezzoAcquisto.getText()), 
+        prezzoVendita = Integer.parseInt(txtPrezzoVendita.getText()), 
+        scortaIniziale = Integer.parseInt(txtScortaIniziale.getText()), 
+        scortaMinima = Integer.parseInt(txtScortaMinima.getText());
+        String nome = txtNomeProdotto.getText();
+        GestioneMagazzino.getMagazzino().registraProdotto(new Prodotto(id, nome, prezzoAcquisto, prezzoVendita, scortaIniziale, scortaMinima));
+    }//GEN-LAST:event_btnAggiungiActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,8 +236,8 @@ public class FrmProdotto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAggiungi;
     private javax.swing.JButton btnAnnulla;
-    private javax.swing.JButton btnSalva;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblNomeProdotto;
     private javax.swing.JLabel lblNuovoProdotto;
