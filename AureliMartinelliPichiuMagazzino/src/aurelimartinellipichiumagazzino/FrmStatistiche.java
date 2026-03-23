@@ -43,7 +43,7 @@ public class FrmStatistiche extends javax.swing.JFrame {
         btnAnnulla = new javax.swing.JButton();
         btnSalva = new javax.swing.JButton();
         pnlTitoloNuovoProdotto = new javax.swing.JPanel();
-        lblNuovoProdotto = new javax.swing.JLabel();
+        lblStatistiche = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -103,36 +103,35 @@ public class FrmStatistiche extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlNuovoProdottoLayout.createSequentialGroup()
                             .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblScortaIniziale)
-                                .addComponent(txtScortaIniziale, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
-                                    .addComponent(lblPrezzoAcquisto)
-                                    .addGap(34, 34, 34))
-                                .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
-                                    .addComponent(txtPrezzoAcquisto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(21, 21, 21)))
-                            .addGap(10, 10, 10)
+                                .addComponent(txtScortaIniziale, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(31, 31, 31)
                             .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblPrezzoVendita)
                                 .addComponent(txtScortaMinima, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblScortaMinima)
-                                .addComponent(txtPrezzoVendita, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtPrezzoVendita, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblPrezzoAcquisto)
+                                .addComponent(txtPrezzoAcquisto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         pnlNuovoProdottoLayout.setVerticalGroup(
             pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(lblNomeProdotto)
+                .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(lblNomeProdotto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNomeProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrezzoAcquisto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(lblPrezzoAcquisto)))
+                .addGap(27, 27, 27)
+                .addComponent(lblPrezzoVendita)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPrezzoAcquisto)
-                    .addComponent(lblPrezzoVendita))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPrezzoAcquisto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPrezzoVendita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtPrezzoVendita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblScortaIniziale)
@@ -150,8 +149,8 @@ public class FrmStatistiche extends javax.swing.JFrame {
 
         pnlTitoloNuovoProdotto.setBackground(new java.awt.Color(224, 224, 224));
 
-        lblNuovoProdotto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
-        lblNuovoProdotto.setText("Nuovo prodotto");
+        lblStatistiche.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
+        lblStatistiche.setText("Statistiche");
 
         javax.swing.GroupLayout pnlTitoloNuovoProdottoLayout = new javax.swing.GroupLayout(pnlTitoloNuovoProdotto);
         pnlTitoloNuovoProdotto.setLayout(pnlTitoloNuovoProdottoLayout);
@@ -159,14 +158,14 @@ public class FrmStatistiche extends javax.swing.JFrame {
             pnlTitoloNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTitoloNuovoProdottoLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(lblNuovoProdotto)
+                .addComponent(lblStatistiche)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlTitoloNuovoProdottoLayout.setVerticalGroup(
             pnlTitoloNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTitoloNuovoProdottoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(lblNuovoProdotto)
+                .addComponent(lblStatistiche)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -229,11 +228,11 @@ public class FrmStatistiche extends javax.swing.JFrame {
     private javax.swing.JButton btnSalva;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblNomeProdotto;
-    private javax.swing.JLabel lblNuovoProdotto;
     private javax.swing.JLabel lblPrezzoAcquisto;
     private javax.swing.JLabel lblPrezzoVendita;
     private javax.swing.JLabel lblScortaIniziale;
     private javax.swing.JLabel lblScortaMinima;
+    private javax.swing.JLabel lblStatistiche;
     private javax.swing.JPanel pnlNuovoProdotto;
     private javax.swing.JPanel pnlTitoloNuovoProdotto;
     private javax.swing.JTextField txtNomeProdotto;

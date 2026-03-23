@@ -78,21 +78,15 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblScortaIniziale" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScortaIniziale" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblPrezzoAcquisto" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txtPrezzoAcquisto" min="-2" pref="127" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblPrezzoVendita" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScortaMinima" min="-2" pref="127" max="-2" attributes="0"/>
                                   <Component id="lblScortaMinima" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtPrezzoVendita" min="-2" pref="127" max="-2" attributes="0"/>
+                                  <Component id="lblPrezzoAcquisto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPrezzoAcquisto" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -104,20 +98,25 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Component id="lblNomeProdotto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtNomeProdotto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPrezzoAcquisto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblPrezzoVendita" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                          <Component id="lblNomeProdotto" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNomeProdotto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtPrezzoAcquisto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Component id="lblPrezzoAcquisto" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="lblPrezzoVendita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtPrezzoAcquisto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtPrezzoVendita" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="txtPrezzoVendita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblScortaIniziale" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -243,7 +242,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Component id="lblNuovoProdotto" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblStatistiche" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -252,19 +251,19 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="lblNuovoProdotto" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblStatistiche" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblNuovoProdotto">
+        <Component class="javax.swing.JLabel" name="lblStatistiche">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semilight" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nuovo prodotto"/>
+            <Property name="text" type="java.lang.String" value="Statistiche"/>
           </Properties>
         </Component>
       </SubComponents>
