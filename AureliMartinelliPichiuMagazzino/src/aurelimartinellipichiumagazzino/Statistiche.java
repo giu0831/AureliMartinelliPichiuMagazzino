@@ -14,7 +14,7 @@ public class Statistiche {
     private Magazzino magazzino;
     private Prodotto prodottoCostoso;
     private Prodotto prodottoEconomico;
-    private ArrayList<Prodotto> prodottiSottoScorta; // salvatagio di tutti prodotti sotto scorta min, per vedere quanti sono si usa size()
+    private ArrayList<Prodotto> prodottiSottoScorta; // salvataggio di tutti prodotti sotto scorta min, per vedere quanti sono si usa size()
     private Prodotto prodottoMaxVenduto;
     private Prodotto prodottoMinVenduto;
 
