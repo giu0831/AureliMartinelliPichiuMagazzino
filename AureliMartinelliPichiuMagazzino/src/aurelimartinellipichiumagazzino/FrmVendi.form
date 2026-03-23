@@ -66,9 +66,9 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="lblPrezzoAcquisto1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSaldoAttuale" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="lblPrezzoAcquisto" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblID" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -77,10 +77,10 @@
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="btnAnnulla" min="-2" pref="96" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="btnSalva" min="-2" pref="96" max="-2" attributes="0"/>
+                              <Component id="btnConferma" min="-2" pref="96" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="lblScortaIniziale" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtScortaIniziale" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                          <Component id="lblQuantita" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtQuantita" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="17" max="32767" attributes="0"/>
@@ -94,17 +94,17 @@
                   <Component id="lblNomeProdotto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPrezzoAcquisto1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblPrezzoAcquisto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSaldoAttuale" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblID" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="lblScortaIniziale" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblQuantita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtScortaIniziale" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="txtQuantita" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnAnnulla" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnSalva" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnConferma" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="17" max="32767" attributes="0"/>
               </Group>
@@ -117,10 +117,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nome prodotto"/>
+            <Property name="text" type="java.lang.String" value="Nome prodotto: nome"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPrezzoAcquisto">
+        <Component class="javax.swing.JLabel" name="lblID">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
@@ -128,18 +128,18 @@
             <Property name="text" type="java.lang.String" value="ID: 0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblScortaIniziale">
+        <Component class="javax.swing.JLabel" name="lblQuantita">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="txtScortaIniziale"/>
+              <ComponentRef name="txtQuantita"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Quantit&#xe0; da aggiungere:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtScortaIniziale">
+        <Component class="javax.swing.JTextField" name="txtQuantita">
         </Component>
         <Component class="javax.swing.JButton" name="btnAnnulla">
           <Properties>
@@ -152,7 +152,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnnullaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnSalva">
+        <Component class="javax.swing.JButton" name="btnConferma">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="66" type="rgb"/>
@@ -163,10 +163,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Salva"/>
+            <Property name="text" type="java.lang.String" value="Conferma"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPrezzoAcquisto1">
+        <Component class="javax.swing.JLabel" name="lblSaldoAttuale">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semilight" size="18" style="0"/>

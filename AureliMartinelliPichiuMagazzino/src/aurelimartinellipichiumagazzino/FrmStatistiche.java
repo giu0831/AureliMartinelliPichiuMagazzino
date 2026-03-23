@@ -30,16 +30,14 @@ public class FrmStatistiche extends javax.swing.JFrame {
 
         jRadioButton1 = new javax.swing.JRadioButton();
         pnlNuovoProdotto = new javax.swing.JPanel();
-        lblNomeProdotto = new javax.swing.JLabel();
-        txtNomeProdotto = new javax.swing.JTextField();
-        lblPrezzoAcquisto = new javax.swing.JLabel();
-        txtPrezzoAcquisto = new javax.swing.JTextField();
-        lblPrezzoVendita = new javax.swing.JLabel();
-        lblScortaIniziale = new javax.swing.JLabel();
-        lblScortaMinima = new javax.swing.JLabel();
-        txtScortaIniziale = new javax.swing.JTextField();
-        txtScortaMinima = new javax.swing.JTextField();
-        txtPrezzoVendita = new javax.swing.JTextField();
+        btnProdottoCostoso = new javax.swing.JLabel();
+        txtProdottoCostoso = new javax.swing.JTextField();
+        btnProdottoEconomico = new javax.swing.JLabel();
+        txtProdottoEconomico = new javax.swing.JTextField();
+        btnProdottoMinVenduto = new javax.swing.JLabel();
+        btnProdottoMaxVenduto = new javax.swing.JLabel();
+        txtProdottoMaxVenduto = new javax.swing.JTextField();
+        txtProdottoMinVenduto = new javax.swing.JTextField();
         btnAnnulla = new javax.swing.JButton();
         btnSalva = new javax.swing.JButton();
         pnlTitoloNuovoProdotto = new javax.swing.JPanel();
@@ -52,25 +50,27 @@ public class FrmStatistiche extends javax.swing.JFrame {
 
         pnlNuovoProdotto.setBackground(new java.awt.Color(246, 246, 246));
 
-        lblNomeProdotto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblNomeProdotto.setLabelFor(txtNomeProdotto);
-        lblNomeProdotto.setText("Nome prodotto");
+        btnProdottoCostoso.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnProdottoCostoso.setLabelFor(txtProdottoCostoso);
+        btnProdottoCostoso.setText("Prodotto costoso");
 
-        lblPrezzoAcquisto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblPrezzoAcquisto.setLabelFor(txtPrezzoAcquisto);
-        lblPrezzoAcquisto.setText("P. Acquisto (€)");
+        btnProdottoEconomico.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnProdottoEconomico.setLabelFor(txtProdottoEconomico);
+        btnProdottoEconomico.setText("Prodotto eco");
 
-        lblPrezzoVendita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblPrezzoVendita.setLabelFor(txtPrezzoVendita);
-        lblPrezzoVendita.setText("P. Vendita (€)");
+        btnProdottoMinVenduto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnProdottoMinVenduto.setLabelFor(txtProdottoMinVenduto);
+        btnProdottoMinVenduto.setText("MinVenduto");
 
-        lblScortaIniziale.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblScortaIniziale.setLabelFor(txtScortaIniziale);
-        lblScortaIniziale.setText("Scorta Iniziale");
+        btnProdottoMaxVenduto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnProdottoMaxVenduto.setLabelFor(txtProdottoMaxVenduto);
+        btnProdottoMaxVenduto.setText("MaxVenduto");
 
-        lblScortaMinima.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblScortaMinima.setLabelFor(txtScortaMinima);
-        lblScortaMinima.setText("Scorta Minima");
+        txtProdottoMaxVenduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProdottoMaxVendutoActionPerformed(evt);
+            }
+        });
 
         btnAnnulla.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnAnnulla.setText("Annulla");
@@ -93,26 +93,25 @@ public class FrmStatistiche extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtNomeProdotto, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblNomeProdotto, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
-                            .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(34, 34, 34)
-                            .addComponent(btnSalva, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlNuovoProdottoLayout.createSequentialGroup()
-                            .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblScortaIniziale)
-                                .addComponent(txtScortaIniziale, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(31, 31, 31)
-                            .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblPrezzoVendita)
-                                .addComponent(txtScortaMinima, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblScortaMinima)
-                                .addComponent(txtPrezzoVendita, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblPrezzoAcquisto)
-                                .addComponent(txtPrezzoAcquisto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(txtProdottoCostoso, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnProdottoCostoso, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlNuovoProdottoLayout.createSequentialGroup()
+                        .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnProdottoMaxVenduto)
+                            .addComponent(txtProdottoMaxVenduto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnProdottoMinVenduto)
+                            .addComponent(txtProdottoMinVenduto, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnProdottoEconomico)
+                            .addComponent(txtProdottoEconomico, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalva, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         pnlNuovoProdottoLayout.setVerticalGroup(
             pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,31 +119,27 @@ public class FrmStatistiche extends javax.swing.JFrame {
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(lblNomeProdotto)
+                        .addComponent(btnProdottoCostoso)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNomeProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPrezzoAcquisto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtProdottoCostoso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtProdottoEconomico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(lblPrezzoAcquisto)))
+                        .addComponent(btnProdottoEconomico)))
                 .addGap(27, 27, 27)
-                .addComponent(lblPrezzoVendita)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPrezzoVendita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblScortaIniziale)
-                    .addComponent(lblScortaMinima))
+                    .addComponent(btnProdottoMinVenduto)
+                    .addComponent(btnProdottoMaxVenduto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtScortaIniziale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtScortaMinima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtProdottoMinVenduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtProdottoMaxVenduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalva, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pnlTitoloNuovoProdotto.setBackground(new java.awt.Color(224, 224, 224));
@@ -198,6 +193,10 @@ public class FrmStatistiche extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAnnullaActionPerformed
 
+    private void txtProdottoMaxVendutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProdottoMaxVendutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProdottoMaxVendutoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,20 +224,18 @@ public class FrmStatistiche extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnnulla;
+    private javax.swing.JLabel btnProdottoCostoso;
+    private javax.swing.JLabel btnProdottoEconomico;
+    private javax.swing.JLabel btnProdottoMaxVenduto;
+    private javax.swing.JLabel btnProdottoMinVenduto;
     private javax.swing.JButton btnSalva;
     private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JLabel lblNomeProdotto;
-    private javax.swing.JLabel lblPrezzoAcquisto;
-    private javax.swing.JLabel lblPrezzoVendita;
-    private javax.swing.JLabel lblScortaIniziale;
-    private javax.swing.JLabel lblScortaMinima;
     private javax.swing.JLabel lblStatistiche;
     private javax.swing.JPanel pnlNuovoProdotto;
     private javax.swing.JPanel pnlTitoloNuovoProdotto;
-    private javax.swing.JTextField txtNomeProdotto;
-    private javax.swing.JTextField txtPrezzoAcquisto;
-    private javax.swing.JTextField txtPrezzoVendita;
-    private javax.swing.JTextField txtScortaIniziale;
-    private javax.swing.JTextField txtScortaMinima;
+    private javax.swing.JTextField txtProdottoCostoso;
+    private javax.swing.JTextField txtProdottoEconomico;
+    private javax.swing.JTextField txtProdottoMaxVenduto;
+    private javax.swing.JTextField txtProdottoMinVenduto;
     // End of variables declaration//GEN-END:variables
 }
