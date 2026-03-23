@@ -4,6 +4,8 @@
  */
 package aurelimartinellipichiumagazzino;
 
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author PICHIU.FLORIN
@@ -83,6 +85,11 @@ public class FrmMagazzino extends javax.swing.JFrame {
 
         btnElimina.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnElimina.setText("Elimina");
+        btnElimina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminaActionPerformed(evt);
+            }
+        });
 
         btnRifornisci.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnRifornisci.setText("Rifornisci");
@@ -192,6 +199,21 @@ public class FrmMagazzino extends javax.swing.JFrame {
         frmProdotto.setVisible(true);
     }//GEN-LAST:event_btnNuovoProdottoActionPerformed
 
+    private void btnEliminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaActionPerformed
+        if (tblGestioneMagazzino.getSelectedRow() == -1) return  ;//messaggio
+        if(GestioneMagazzino.getMagazzino().rimuoviProdotto(getIdProdottoSelezionato())) ;//messaggio;
+    }//GEN-LAST:event_btnEliminaActionPerformed
+
+    /**
+     * Metodo per leggere l'id dalla tabella
+     * @return id
+     */
+    public int getIdProdottoSelezionato(){
+      int rigaSelezionata = tblGestioneMagazzino.getSelectedRow();
+      TableModel model = tblGestioneMagazzino.getModel();
+      int id = (int)model.getValueAt(rigaSelezionata, 0);
+      return id;     
+    }
     /**
      * @param args the command line arguments
      */
