@@ -72,22 +72,16 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="btnAnnulla" min="-2" pref="96" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="btnSalva" min="-2" pref="96" max="-2" attributes="0"/>
+                              <Component id="btnAggiungi" min="-2" pref="96" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblScortaIniziale" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScortaIniziale" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblPrezzoAcquisto" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txtPrezzoAcquisto" min="-2" pref="127" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lblPrezzoAcquisto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPrezzoAcquisto" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblPrezzoVendita" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScortaMinima" min="-2" pref="127" max="-2" attributes="0"/>
@@ -131,7 +125,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnAnnulla" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnSalva" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnAggiungi" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
@@ -215,7 +209,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnnullaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnSalva">
+        <Component class="javax.swing.JButton" name="btnAggiungi">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="66" type="rgb"/>
@@ -226,8 +220,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Salva"/>
+            <Property name="text" type="java.lang.String" value="Aggiungi"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAggiungiActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

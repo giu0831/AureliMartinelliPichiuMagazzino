@@ -91,6 +91,14 @@ public class Prodotto {
     public boolean controlloScortaMin(){
         return scorta >= scortaMin;
     }
+    
+    /**
+     * Metodo per rifornire il prodotto
+     * @param quantita quantita da rifornire
+     */
+    public void rifornisci(int quantita){
+        scorta += quantita;
+    }
 
     @Override
     public int hashCode() {
