@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author PICHIU.FLORIN
+ * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
  */
 public class FrmProdotto extends javax.swing.JFrame {
     
