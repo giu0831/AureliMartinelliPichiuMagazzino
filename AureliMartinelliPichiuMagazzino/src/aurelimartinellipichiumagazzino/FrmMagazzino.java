@@ -4,6 +4,7 @@
  */
 package aurelimartinellipichiumagazzino;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 
 /**
@@ -215,8 +216,11 @@ public class FrmMagazzino extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNuovoProdottoActionPerformed
 
     private void btnEliminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaActionPerformed
-        if (tblGestioneMagazzino.getSelectedRow() == -1) return  ;//messaggio
-        if(GestioneMagazzino.getMagazzino().rimuoviProdotto(getIdProdottoSelezionato())) ;//messaggio;
+        if (tblGestioneMagazzino.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(this, "Seleziona una riga della tabella", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(GestioneMagazzino.getMagazzino().rimuoviProdotto(getIdProdottoSelezionato())) JOptionPane.showMessageDialog(this, "Il prodotto è stato eliminato", "Informazioni", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnEliminaActionPerformed
 
     private void btnRifornisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRifornisciActionPerformed
@@ -225,7 +229,7 @@ public class FrmMagazzino extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRifornisciActionPerformed
 
     private void btnVendiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendiActionPerformed
-        FrmVendi frmVendi = new FrmVendi();
+        FrmVendi frmVendi = new FrmVendi(GestioneMagazzino.getMagazzino().trovaProdottoPerId(getIdProdottoSelezionato()));
         frmVendi.setVisible(true);
     }//GEN-LAST:event_btnVendiActionPerformed
 
