@@ -136,7 +136,7 @@
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="txtQuantita"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Quantit&#xe0; da aggiungere:"/>
+            <Property name="text" type="java.lang.String" value="Quantit&#xe0; da vendere:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtQuantita">
@@ -188,7 +188,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Component id="lblRifornimento" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNuovaVendita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -197,19 +197,19 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="lblRifornimento" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNuovaVendita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblRifornimento">
+        <Component class="javax.swing.JLabel" name="lblNuovaVendita">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semilight" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rifornimento"/>
+            <Property name="text" type="java.lang.String" value="Nuova vendita"/>
           </Properties>
         </Component>
       </SubComponents>
