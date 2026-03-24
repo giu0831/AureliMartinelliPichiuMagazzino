@@ -38,7 +38,7 @@ public class FrmRifornisci extends javax.swing.JFrame {
         btnConferma = new javax.swing.JButton();
         lblSaldoAttuale = new javax.swing.JLabel();
         pnlTitoloRifornimento = new javax.swing.JPanel();
-        lblNuovaVendita = new javax.swing.JLabel();
+        lblRifornimento = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -55,7 +55,7 @@ public class FrmRifornisci extends javax.swing.JFrame {
 
         lblQuantita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         lblQuantita.setLabelFor(txtQuantita);
-        lblQuantita.setText("Quantità da vendere:");
+        lblQuantita.setText("Quantità da aggiungere:");
 
         btnAnnulla.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnAnnulla.setText("Annulla");
@@ -118,8 +118,8 @@ public class FrmRifornisci extends javax.swing.JFrame {
 
         pnlTitoloRifornimento.setBackground(new java.awt.Color(224, 224, 224));
 
-        lblNuovaVendita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
-        lblNuovaVendita.setText("Nuova vendita");
+        lblRifornimento.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
+        lblRifornimento.setText("Rifornimento");
 
         javax.swing.GroupLayout pnlTitoloRifornimentoLayout = new javax.swing.GroupLayout(pnlTitoloRifornimento);
         pnlTitoloRifornimento.setLayout(pnlTitoloRifornimentoLayout);
@@ -127,14 +127,14 @@ public class FrmRifornisci extends javax.swing.JFrame {
             pnlTitoloRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTitoloRifornimentoLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(lblNuovaVendita)
+                .addComponent(lblRifornimento)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlTitoloRifornimentoLayout.setVerticalGroup(
             pnlTitoloRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTitoloRifornimentoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(lblNuovaVendita)
+                .addComponent(lblRifornimento)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -199,8 +199,8 @@ public class FrmRifornisci extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblNomeProdotto;
-    private javax.swing.JLabel lblNuovaVendita;
     private javax.swing.JLabel lblQuantita;
+    private javax.swing.JLabel lblRifornimento;
     private javax.swing.JLabel lblSaldoAttuale;
     private javax.swing.JPanel pnlRifornimento;
     private javax.swing.JPanel pnlTitoloRifornimento;
