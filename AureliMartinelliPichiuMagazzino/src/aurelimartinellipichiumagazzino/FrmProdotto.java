@@ -4,6 +4,8 @@
  */
 package aurelimartinellipichiumagazzino;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author PICHIU.FLORIN
@@ -201,6 +203,10 @@ public class FrmProdotto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAnnullaActionPerformed
 
     private void btnAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiungiActionPerformed
+        if(controlloTextBox() || !controlloInt()){
+            JOptionPane.showMessageDialog(this, "Inserisci tutti i dati corretamente", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         int id = GestioneMagazzino.getMagazzino().getListaProdotti().size(),
         prezzoAcquisto = Integer.parseInt(txtPrezzoAcquisto.getText()), 
         prezzoVendita = Integer.parseInt(txtPrezzoVendita.getText()), 
@@ -211,6 +217,28 @@ public class FrmProdotto extends javax.swing.JFrame {
         GestioneMagazzino.getMagazzino().registraProdotto(new Prodotto(id, nome, prezzoAcquisto, prezzoVendita, scortaIniziale, scortaMinima));
     }//GEN-LAST:event_btnAggiungiActionPerformed
 
+    /**
+     * Metodo per controllae se c'e' una textbox vuota
+     * @return true se c'e' almeno una textbox vuota
+     */
+    public boolean controlloTextBox(){
+        return txtPrezzoAcquisto.getText().isBlank() || txtPrezzoVendita.getText().isBlank() || txtScortaIniziale.getText().isBlank() || txtScortaMinima.getText().isBlank() || txtNomeProdotto.getText().isBlank();
+    }
+    /**
+     * Metodo per controllare se le textbox contengono numeri
+     * @return true se sono tutti numeri
+     */
+    public boolean controlloInt(){
+        try {
+        Integer.parseInt(txtPrezzoAcquisto.getText());
+        Integer.parseInt(txtPrezzoVendita.getText());
+        Integer.parseInt(txtScortaIniziale.getText());
+        Integer.parseInt(txtScortaMinima.getText());
+        return true;
+    } catch (NumberFormatException e) {
+        return false;
+    } 
+    }
     /**
      * Metodo per svuotare le textbox
      */
