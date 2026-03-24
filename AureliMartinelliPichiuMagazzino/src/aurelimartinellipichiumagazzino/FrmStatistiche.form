@@ -61,155 +61,128 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="txtProdottoCostoso" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnProdottoCostoso" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lblProdottoCostoso" max="32767" attributes="0"/>
+                      <Component id="lblQuantitaProdottoMaxVenduto" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblQuantitaProdottoCostoso" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblMaxVenduto" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblQuantitaProdottoMinVenduto" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblQuantitaProdottoEconomico" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="lblProdottoEconomico" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnProdottoMaxVenduto" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtProdottoMaxVenduto" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnProdottoMinVenduto" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtProdottoMinVenduto" min="-2" pref="127" max="-2" attributes="0"/>
-                              <Component id="btnProdottoEconomico" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtProdottoEconomico" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="lblMinVenduto" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                  <Component id="btnAnnulla" min="-2" pref="96" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnSalva" min="-2" pref="96" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="btnProdottoCostoso" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtProdottoCostoso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtProdottoEconomico" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="btnProdottoEconomico" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnProdottoMinVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnProdottoMaxVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblQuantitaProdottoCostoso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblQuantitaProdottoEconomico" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtProdottoMinVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtProdottoMaxVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblProdottoCostoso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblProdottoEconomico" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnAnnulla" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnSalva" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="lblQuantitaProdottoMaxVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblQuantitaProdottoMinVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="77" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblMaxVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMinVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="98" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="btnProdottoCostoso">
+        <Component class="javax.swing.JLabel" name="lblQuantitaProdottoCostoso">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
+              <Font name="Yu Gothic UI" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="txtProdottoCostoso"/>
+              <ComponentRef name="lblQuantitaProdottoCostoso"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Prodotto costoso"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtProdottoCostoso">
-        </Component>
-        <Component class="javax.swing.JLabel" name="btnProdottoEconomico">
+        <Component class="javax.swing.JLabel" name="lblQuantitaProdottoEconomico">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
+              <Font name="Yu Gothic UI" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="txtProdottoEconomico"/>
+              <ComponentRef name="lblQuantitaProdottoEconomico"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Prodotto eco"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtProdottoEconomico">
-        </Component>
-        <Component class="javax.swing.JLabel" name="btnProdottoMinVenduto">
+        <Component class="javax.swing.JLabel" name="lblQuantitaProdottoMinVenduto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
+              <Font name="Yu Gothic UI" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="txtProdottoMinVenduto"/>
+              <ComponentRef name="lblQuantitaProdottoMinVenduto"/>
             </Property>
             <Property name="text" type="java.lang.String" value="MinVenduto"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="btnProdottoMaxVenduto">
+        <Component class="javax.swing.JLabel" name="lblQuantitaProdottoMaxVenduto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
+              <Font name="Yu Gothic UI" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="txtProdottoMaxVenduto"/>
+              <ComponentRef name="lblQuantitaProdottoMaxVenduto"/>
             </Property>
             <Property name="text" type="java.lang.String" value="MaxVenduto"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtProdottoMaxVenduto">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtProdottoMaxVendutoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtProdottoMinVenduto">
-        </Component>
-        <Component class="javax.swing.JButton" name="btnAnnulla">
+        <Component class="javax.swing.JLabel" name="lblProdottoCostoso">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Semilight" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Annulla"/>
+            <Property name="text" type="java.lang.String" value="Nome"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnnullaActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnSalva">
+        <Component class="javax.swing.JLabel" name="lblProdottoEconomico">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="66" red="66" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Semilight" size="14" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Salva"/>
+            <Property name="text" type="java.lang.String" value="Nome"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMaxVenduto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMinVenduto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome"/>
           </Properties>
         </Component>
       </SubComponents>

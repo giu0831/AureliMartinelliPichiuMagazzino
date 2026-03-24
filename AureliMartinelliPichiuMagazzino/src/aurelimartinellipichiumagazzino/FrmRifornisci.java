@@ -37,6 +37,8 @@ public class FrmRifornisci extends javax.swing.JFrame {
         btnAnnulla = new javax.swing.JButton();
         btnConferma = new javax.swing.JButton();
         lblSaldoAttuale = new javax.swing.JLabel();
+        lblNomeProdottoRifornimento = new javax.swing.JLabel();
+        lblQUantitaRifornimento = new javax.swing.JLabel();
         pnlTitoloRifornimento = new javax.swing.JPanel();
         lblRifornimento = new javax.swing.JLabel();
 
@@ -48,7 +50,7 @@ public class FrmRifornisci extends javax.swing.JFrame {
         pnlRifornimento.setBackground(new java.awt.Color(246, 246, 246));
 
         lblNomeProdotto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblNomeProdotto.setText("Nome prodotto: nome");
+        lblNomeProdotto.setText("Nome prodotto: ");
 
         lblID.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         lblID.setText("ID: 0");
@@ -71,7 +73,13 @@ public class FrmRifornisci extends javax.swing.JFrame {
         btnConferma.setText("Conferma");
 
         lblSaldoAttuale.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblSaldoAttuale.setText("Saldo attuale: 0");
+        lblSaldoAttuale.setText("Saldo attuale: ");
+
+        lblNomeProdottoRifornimento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNomeProdottoRifornimento.setText("Nome");
+
+        lblQUantitaRifornimento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblQUantitaRifornimento.setText("Numero");
 
         javax.swing.GroupLayout pnlRifornimentoLayout = new javax.swing.GroupLayout(pnlRifornimento);
         pnlRifornimento.setLayout(pnlRifornimentoLayout);
@@ -79,32 +87,41 @@ public class FrmRifornisci extends javax.swing.JFrame {
             pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRifornimentoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRifornimentoLayout.createSequentialGroup()
-                        .addComponent(lblSaldoAttuale)
-                        .addGap(125, 125, 125)
-                        .addComponent(lblID)
-                        .addGap(8, 8, 8))
-                    .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lblNomeProdotto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNomeProdottoRifornimento, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(pnlRifornimentoLayout.createSequentialGroup()
-                            .addGap(59, 59, 59)
-                            .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(34, 34, 34)
-                            .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(lblQuantita)
-                        .addComponent(txtQuantita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                            .addComponent(lblSaldoAttuale)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblQUantitaRifornimento)
+                            .addGap(82, 82, 82)
+                            .addComponent(lblID)
+                            .addGap(8, 8, 8))
+                        .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlRifornimentoLayout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblQuantita)
+                            .addComponent(txtQuantita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlRifornimentoLayout.setVerticalGroup(
             pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRifornimentoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(lblNomeProdotto)
-                .addGap(18, 18, 18)
+                .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNomeProdotto)
+                    .addComponent(lblNomeProdottoRifornimento, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSaldoAttuale)
-                    .addComponent(lblID))
+                    .addComponent(lblID)
+                    .addComponent(lblQUantitaRifornimento))
                 .addGap(18, 18, 18)
                 .addComponent(lblQuantita)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -199,6 +216,8 @@ public class FrmRifornisci extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblNomeProdotto;
+    private javax.swing.JLabel lblNomeProdottoRifornimento;
+    private javax.swing.JLabel lblQUantitaRifornimento;
     private javax.swing.JLabel lblQuantita;
     private javax.swing.JLabel lblRifornimento;
     private javax.swing.JLabel lblSaldoAttuale;
