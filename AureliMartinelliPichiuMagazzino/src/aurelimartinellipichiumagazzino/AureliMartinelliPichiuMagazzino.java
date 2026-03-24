@@ -7,7 +7,7 @@ package aurelimartinellipichiumagazzino;
 /**
  * Main
  *
- * @author Aureli Giulia, Martinelli Alessandra, Pichiu Florin
+ * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
  */
 public class AureliMartinelliPichiuMagazzino {
 

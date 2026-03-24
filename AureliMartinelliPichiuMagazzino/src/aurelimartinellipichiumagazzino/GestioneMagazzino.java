@@ -6,7 +6,7 @@ package aurelimartinellipichiumagazzino;
 
 /**
  *
- * @author aureli.giulia
+ * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
  */
 public class GestioneMagazzino {
     private static Magazzino magazzino;

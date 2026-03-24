@@ -6,7 +6,7 @@ package aurelimartinellipichiumagazzino;
 
 /**
  *
- * @author PICHIU.FLORIN
+ * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
  */
 public class FrmRifornisci extends javax.swing.JFrame {
     

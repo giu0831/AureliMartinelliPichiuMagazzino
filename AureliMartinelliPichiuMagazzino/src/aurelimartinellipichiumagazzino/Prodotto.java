@@ -6,7 +6,7 @@ package aurelimartinellipichiumagazzino;
 
 /**
  *
- * @author aureli.giulia
+ * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
  */
 public class Prodotto {
     private int id;

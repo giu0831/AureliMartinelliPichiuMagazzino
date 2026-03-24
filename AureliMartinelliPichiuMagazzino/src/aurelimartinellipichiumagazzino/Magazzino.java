@@ -6,7 +6,7 @@ package aurelimartinellipichiumagazzino;
 import java.util.*;
 /**
  *
- * @author aureli.giulia
+ * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
  */
 public class Magazzino {
     HashSet<Prodotto> listaProdotti;

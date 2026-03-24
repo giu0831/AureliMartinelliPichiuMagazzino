@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  * Classe che contiene tutte le statistiche
- * @author aureli.giulia
+ * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
  */
 public class Statistiche {
     private Magazzino magazzino;
