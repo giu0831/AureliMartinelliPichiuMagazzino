@@ -36,7 +36,7 @@ public class FrmMagazzino extends javax.swing.JFrame {
         btnVendi = new javax.swing.JButton();
         btnElimina = new javax.swing.JButton();
         btnRifornisci = new javax.swing.JButton();
-        btnElimina1 = new javax.swing.JButton();
+        btnStatistiche = new javax.swing.JButton();
         pnlTitoloGestioneMagazzino = new javax.swing.JPanel();
         lblGestioneMagazzino = new javax.swing.JLabel();
         btnNuovoProdotto = new javax.swing.JButton();
@@ -82,6 +82,11 @@ public class FrmMagazzino extends javax.swing.JFrame {
 
         btnVendi.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnVendi.setText("Vendi");
+        btnVendi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVendiActionPerformed(evt);
+            }
+        });
 
         btnElimina.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnElimina.setText("Elimina");
@@ -93,9 +98,19 @@ public class FrmMagazzino extends javax.swing.JFrame {
 
         btnRifornisci.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnRifornisci.setText("Rifornisci");
+        btnRifornisci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRifornisciActionPerformed(evt);
+            }
+        });
 
-        btnElimina1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-        btnElimina1.setText("Stats");
+        btnStatistiche.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnStatistiche.setText("Stats");
+        btnStatistiche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStatisticheActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlGestioneMagazzinoLayout = new javax.swing.GroupLayout(pnlGestioneMagazzino);
         pnlGestioneMagazzino.setLayout(pnlGestioneMagazzinoLayout);
@@ -109,7 +124,7 @@ public class FrmMagazzino extends javax.swing.JFrame {
                     .addComponent(btnRifornisci)
                     .addComponent(btnVendi, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnElimina, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnElimina1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnStatistiche, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         pnlGestioneMagazzinoLayout.setVerticalGroup(
@@ -125,7 +140,7 @@ public class FrmMagazzino extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addComponent(btnElimina)
                         .addGap(39, 39, 39)
-                        .addComponent(btnElimina1)
+                        .addComponent(btnStatistiche)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGestioneMagazzinoLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,6 +219,21 @@ public class FrmMagazzino extends javax.swing.JFrame {
         if(GestioneMagazzino.getMagazzino().rimuoviProdotto(getIdProdottoSelezionato())) ;//messaggio;
     }//GEN-LAST:event_btnEliminaActionPerformed
 
+    private void btnRifornisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRifornisciActionPerformed
+        FrmRifornisci frmRifornisci = new FrmRifornisci();
+        frmRifornisci.setVisible(true);
+    }//GEN-LAST:event_btnRifornisciActionPerformed
+
+    private void btnVendiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendiActionPerformed
+        FrmVendi frmVendi = new FrmVendi();
+        frmVendi.setVisible(true);
+    }//GEN-LAST:event_btnVendiActionPerformed
+
+    private void btnStatisticheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatisticheActionPerformed
+        FrmStatistiche frmStatistiche = new FrmStatistiche();
+        frmStatistiche.setVisible(true);
+    }//GEN-LAST:event_btnStatisticheActionPerformed
+
     /**
      * Metodo per leggere l'id dalla tabella
      * @return id
@@ -241,9 +271,9 @@ public class FrmMagazzino extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnElimina;
-    private javax.swing.JButton btnElimina1;
     private javax.swing.JButton btnNuovoProdotto;
     private javax.swing.JButton btnRifornisci;
+    private javax.swing.JButton btnStatistiche;
     private javax.swing.JButton btnVendi;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblGestioneMagazzino;
