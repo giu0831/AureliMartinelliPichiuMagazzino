@@ -11,12 +11,14 @@ package aurelimartinellipichiumagazzino;
 public class FrmVendi extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmVendi.class.getName());
-
+    private Prodotto p;
     /**
      * Creates new form FrmProdotto
+     * @param p prodotto da rifornire
      */
-    public FrmVendi() {
+    public FrmVendi(Prodotto p) {
         initComponents();
+        this.p = p;
     }
 
     /**
@@ -38,7 +40,7 @@ public class FrmVendi extends javax.swing.JFrame {
         btnConferma = new javax.swing.JButton();
         lblSaldoAttuale = new javax.swing.JLabel();
         pnlTitoloRifornimento = new javax.swing.JPanel();
-        lblRifornimento = new javax.swing.JLabel();
+        lblNuovaVendita = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -55,7 +57,7 @@ public class FrmVendi extends javax.swing.JFrame {
 
         lblQuantita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         lblQuantita.setLabelFor(txtQuantita);
-        lblQuantita.setText("Quantità da aggiungere:");
+        lblQuantita.setText("Quantità da vendere:");
 
         btnAnnulla.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnAnnulla.setText("Annulla");
@@ -118,8 +120,8 @@ public class FrmVendi extends javax.swing.JFrame {
 
         pnlTitoloRifornimento.setBackground(new java.awt.Color(224, 224, 224));
 
-        lblRifornimento.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
-        lblRifornimento.setText("Rifornimento");
+        lblNuovaVendita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
+        lblNuovaVendita.setText("Nuova vendita");
 
         javax.swing.GroupLayout pnlTitoloRifornimentoLayout = new javax.swing.GroupLayout(pnlTitoloRifornimento);
         pnlTitoloRifornimento.setLayout(pnlTitoloRifornimentoLayout);
@@ -127,14 +129,14 @@ public class FrmVendi extends javax.swing.JFrame {
             pnlTitoloRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTitoloRifornimentoLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(lblRifornimento)
+                .addComponent(lblNuovaVendita)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlTitoloRifornimentoLayout.setVerticalGroup(
             pnlTitoloRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTitoloRifornimentoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(lblRifornimento)
+                .addComponent(lblNuovaVendita)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -188,9 +190,6 @@ public class FrmVendi extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrmVendi().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -199,8 +198,8 @@ public class FrmVendi extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblNomeProdotto;
+    private javax.swing.JLabel lblNuovaVendita;
     private javax.swing.JLabel lblQuantita;
-    private javax.swing.JLabel lblRifornimento;
     private javax.swing.JLabel lblSaldoAttuale;
     private javax.swing.JPanel pnlRifornimento;
     private javax.swing.JPanel pnlTitoloRifornimento;
