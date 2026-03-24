@@ -7,7 +7,7 @@ package aurelimartinellipichiumagazzino;
 import javax.swing.table.TableModel;
 
 /**
- *
+ * 
  * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
  */
 public class FrmMagazzino extends javax.swing.JFrame {
