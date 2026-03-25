@@ -125,7 +125,4 @@ public class Prodotto {
         final Prodotto other = (Prodotto) obj;
         return this.id == other.id;
     }
-
-    
-    
 }

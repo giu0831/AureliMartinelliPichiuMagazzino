@@ -229,6 +229,7 @@ public class FrmMagazzino extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRifornisciActionPerformed
 
     private void btnVendiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendiActionPerformed
+        //aggiungere un try-catch
         FrmVendi frmVendi = new FrmVendi(GestioneMagazzino.getMagazzino().trovaProdottoPerId(getIdProdottoSelezionato()));
         frmVendi.setVisible(true);
     }//GEN-LAST:event_btnVendiActionPerformed
