@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jRadioButton1"/>
-      </Properties>
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Aggiungi nuovo prodotto"/>
+    <Property name="title" type="java.lang.String" value="Statistiche"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -65,8 +59,8 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lblProdottoCostoso" max="32767" attributes="0"/>
-                      <Component id="lblQuantitaProdottoMaxVenduto" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblQuantitaProdottoCostoso" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblProdottoMaxVenduto" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPCostoso" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblMaxVenduto" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -75,8 +69,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblQuantitaProdottoMinVenduto" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblQuantitaProdottoEconomico" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblProdottoMinVenduto" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblPEconomico" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
                               </Group>
@@ -90,15 +84,20 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="btnAggiorna" min="-2" pref="96" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblQuantitaProdottoCostoso" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblQuantitaProdottoEconomico" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPCostoso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPEconomico" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -107,83 +106,102 @@
                   </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblQuantitaProdottoMaxVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblQuantitaProdottoMinVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblProdottoMaxVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblProdottoMinVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblMaxVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblMinVenduto" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="98" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnAggiorna" min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace pref="9" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblQuantitaProdottoCostoso">
+        <Component class="javax.swing.JLabel" name="lblPCostoso">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="lblQuantitaProdottoCostoso"/>
+              <ComponentRef name="lblPCostoso"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Prodotto costoso"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblQuantitaProdottoEconomico">
+        <Component class="javax.swing.JLabel" name="lblPEconomico">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="lblQuantitaProdottoEconomico"/>
+              <ComponentRef name="lblPEconomico"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Prodotto eco"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblQuantitaProdottoMinVenduto">
+        <Component class="javax.swing.JLabel" name="lblProdottoMinVenduto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="lblQuantitaProdottoMinVenduto"/>
+              <ComponentRef name="lblProdottoMinVenduto"/>
             </Property>
             <Property name="text" type="java.lang.String" value="MinVenduto"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblQuantitaProdottoMaxVenduto">
+        <Component class="javax.swing.JLabel" name="lblProdottoMaxVenduto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI" size="18" style="0"/>
             </Property>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="lblQuantitaProdottoMaxVenduto"/>
+              <ComponentRef name="lblProdottoMaxVenduto"/>
             </Property>
             <Property name="text" type="java.lang.String" value="MaxVenduto"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblProdottoCostoso">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome"/>
+            <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblProdottoEconomico">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome"/>
+            <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblMaxVenduto">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome"/>
+            <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblMinVenduto">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome"/>
+            <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAggiorna">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="66" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Yu Gothic UI Semilight" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aggiorna"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAggiornaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

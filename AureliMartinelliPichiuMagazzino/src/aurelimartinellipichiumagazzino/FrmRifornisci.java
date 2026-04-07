@@ -4,6 +4,9 @@
  */
 package aurelimartinellipichiumagazzino;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
@@ -11,12 +14,18 @@ package aurelimartinellipichiumagazzino;
 public class FrmRifornisci extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmRifornisci.class.getName());
-
+    private Prodotto p;
+    private DefaultTableModel model;
     /**
      * Creates new form FrmProdotto
+     * @param p prodotto da rifornire
+     * @param model tabella magazzino
      */
-    public FrmRifornisci() {
+    public FrmRifornisci(Prodotto p, DefaultTableModel model) {
         initComponents();
+        this.p = p;
+        this.model = model;
+        aggiornaLabel();
     }
 
     /**
@@ -30,30 +39,34 @@ public class FrmRifornisci extends javax.swing.JFrame {
 
         jRadioButton1 = new javax.swing.JRadioButton();
         pnlRifornimento = new javax.swing.JPanel();
-        lblNomeProdotto = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
         lblID = new javax.swing.JLabel();
         lblQuantita = new javax.swing.JLabel();
         txtQuantita = new javax.swing.JTextField();
         btnAnnulla = new javax.swing.JButton();
         btnConferma = new javax.swing.JButton();
-        lblSaldoAttuale = new javax.swing.JLabel();
-        lblNomeProdottoRifornimento = new javax.swing.JLabel();
-        lblQUantitaRifornimento = new javax.swing.JLabel();
+        lblQuantitaAttuale = new javax.swing.JLabel();
+        lblNomeProdotto = new javax.swing.JLabel();
+        lblNQuantitaAttuale = new javax.swing.JLabel();
+        lblQuantitaMinima = new javax.swing.JLabel();
+        lblNQuantitaMinima = new javax.swing.JLabel();
+        lblIDProdotto = new javax.swing.JLabel();
         pnlTitoloRifornimento = new javax.swing.JPanel();
         lblRifornimento = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Aggiungi nuovo prodotto");
+        setTitle("Rifornisci prodotto");
+        setResizable(false);
 
         pnlRifornimento.setBackground(new java.awt.Color(246, 246, 246));
 
-        lblNomeProdotto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblNomeProdotto.setText("Nome prodotto: ");
+        lblNome.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblNome.setText("Nome prodotto: ");
 
         lblID.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblID.setText("ID: 0");
+        lblID.setText("ID: ");
 
         lblQuantita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         lblQuantita.setLabelFor(txtQuantita);
@@ -71,15 +84,29 @@ public class FrmRifornisci extends javax.swing.JFrame {
         btnConferma.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnConferma.setForeground(new java.awt.Color(255, 255, 255));
         btnConferma.setText("Conferma");
+        btnConferma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfermaActionPerformed(evt);
+            }
+        });
 
-        lblSaldoAttuale.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblSaldoAttuale.setText("Saldo attuale: ");
+        lblQuantitaAttuale.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblQuantitaAttuale.setText("Quantita' attuale: ");
 
-        lblNomeProdottoRifornimento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblNomeProdottoRifornimento.setText("Nome");
+        lblNomeProdotto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNomeProdotto.setText("Nome");
 
-        lblQUantitaRifornimento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblQUantitaRifornimento.setText("Numero");
+        lblNQuantitaAttuale.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNQuantitaAttuale.setText("Numero");
+
+        lblQuantitaMinima.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblQuantitaMinima.setText("Quantita' minima: ");
+
+        lblNQuantitaMinima.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNQuantitaMinima.setText("Numero");
+
+        lblIDProdotto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblIDProdotto.setText("ID");
 
         javax.swing.GroupLayout pnlRifornimentoLayout = new javax.swing.GroupLayout(pnlRifornimento);
         pnlRifornimento.setLayout(pnlRifornimentoLayout);
@@ -89,17 +116,19 @@ public class FrmRifornisci extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRifornimentoLayout.createSequentialGroup()
-                        .addComponent(lblNomeProdotto)
+                        .addComponent(lblNome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblNomeProdottoRifornimento, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblNomeProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblID)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblIDProdotto))
                     .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(pnlRifornimentoLayout.createSequentialGroup()
-                            .addComponent(lblSaldoAttuale)
+                            .addComponent(lblQuantitaAttuale)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblQUantitaRifornimento)
-                            .addGap(82, 82, 82)
-                            .addComponent(lblID)
-                            .addGap(8, 8, 8))
+                            .addComponent(lblNQuantitaAttuale)
+                            .addGap(126, 126, 126))
                         .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlRifornimentoLayout.createSequentialGroup()
                                 .addGap(59, 59, 59)
@@ -107,7 +136,11 @@ public class FrmRifornisci extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)
                                 .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblQuantita)
-                            .addComponent(txtQuantita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtQuantita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlRifornimentoLayout.createSequentialGroup()
+                        .addComponent(lblQuantitaMinima)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNQuantitaMinima)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlRifornimentoLayout.setVerticalGroup(
@@ -115,13 +148,18 @@ public class FrmRifornisci extends javax.swing.JFrame {
             .addGroup(pnlRifornimentoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNomeProdotto)
-                    .addComponent(lblNomeProdottoRifornimento, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblNome)
+                    .addComponent(lblNomeProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblID)
+                    .addComponent(lblIDProdotto))
                 .addGap(14, 14, 14)
                 .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSaldoAttuale)
-                    .addComponent(lblID)
-                    .addComponent(lblQUantitaRifornimento))
+                    .addComponent(lblQuantitaAttuale)
+                    .addComponent(lblNQuantitaAttuale))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblQuantitaMinima)
+                    .addComponent(lblNQuantitaMinima))
                 .addGap(18, 18, 18)
                 .addComponent(lblQuantita)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -130,7 +168,7 @@ public class FrmRifornisci extends javax.swing.JFrame {
                 .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pnlTitoloRifornimento.setBackground(new java.awt.Color(224, 224, 224));
@@ -169,9 +207,9 @@ public class FrmRifornisci extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(pnlTitoloRifornimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlRifornimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addContainerGap())
         );
 
         pack();
@@ -185,6 +223,62 @@ public class FrmRifornisci extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAnnullaActionPerformed
 
+    private void btnConfermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfermaActionPerformed
+        if(!controlloInt()){
+            JOptionPane.showMessageDialog(this, "Inserisci un valore numerico maggiore di 0", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        int quantita = Integer.parseInt(txtQuantita.getText());
+        if(quantita < 1){
+            JOptionPane.showMessageDialog(this, "Inserisci un valore numerico maggiore di 0", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        p.rifornisci(quantita);
+        JOptionPane.showMessageDialog(this, "Il prodotto e' stato rifornito", "Info", JOptionPane.INFORMATION_MESSAGE);
+        aggiornaTabella();
+        aggiornaLabel();
+    }//GEN-LAST:event_btnConfermaActionPerformed
+
+    /**
+     * Metodo per controllare se la textbox contiene un numero
+     * @return true se sono tutti numeri
+     */
+    public boolean controlloInt(){
+        try {
+        Integer.parseInt(txtQuantita.getText());
+        return true;
+    } catch (NumberFormatException e) {
+        return false;
+    } 
+    }
+    
+    public void aggiornaLabel(){
+        lblIDProdotto.setText(String.valueOf(p.getId()));
+        lblNomeProdotto.setText(p.getNome());
+        lblNQuantitaAttuale.setText(String.valueOf(p.getScorta()));
+        lblNQuantitaMinima.setText(String.valueOf(p.getScortaMin()));
+    }
+    
+    /**
+     * Metodo per vedere lo stato di un prodotto
+     * @param p prodotto
+     * @return stato del prodotto
+     */
+    public String getStato(Prodotto p){
+        if(p.controlloScortaMin()) return "ok";
+        return "da rifornire";
+    }
+    /**
+     * Metodo per aggiornare la tabella
+     */
+    public void aggiornaTabella(){
+        model.setRowCount(0);
+        for(Prodotto p : GestioneMagazzino.getMagazzino().getListaProdotti()){
+            model.addRow(new Object[]{p.getId(), p.getNome(), p.getPrezzoAcquisto(), p.getPrezzoVendita(), p.getScorta(), getStato(p)});
+        }
+
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -207,7 +301,6 @@ public class FrmRifornisci extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrmRifornisci().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -215,12 +308,15 @@ public class FrmRifornisci extends javax.swing.JFrame {
     private javax.swing.JButton btnConferma;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblID;
+    private javax.swing.JLabel lblIDProdotto;
+    private javax.swing.JLabel lblNQuantitaAttuale;
+    private javax.swing.JLabel lblNQuantitaMinima;
+    private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblNomeProdotto;
-    private javax.swing.JLabel lblNomeProdottoRifornimento;
-    private javax.swing.JLabel lblQUantitaRifornimento;
     private javax.swing.JLabel lblQuantita;
+    private javax.swing.JLabel lblQuantitaAttuale;
+    private javax.swing.JLabel lblQuantitaMinima;
     private javax.swing.JLabel lblRifornimento;
-    private javax.swing.JLabel lblSaldoAttuale;
     private javax.swing.JPanel pnlRifornimento;
     private javax.swing.JPanel pnlTitoloRifornimento;
     private javax.swing.JTextField txtQuantita;

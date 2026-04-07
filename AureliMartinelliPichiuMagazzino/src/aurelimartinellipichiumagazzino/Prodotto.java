@@ -27,6 +27,16 @@ public class Prodotto {
         prodottiVenduti = 0;
     }
 
+    public Prodotto(int id, String nome, int prezzoAcquisto, int prezzoVendita, int scorta, int scorteMin, int prodottiVenduti) {
+        this.id = id;
+        this.nome = nome;
+        this.prezzoAcquisto = prezzoAcquisto;
+        this.prezzoVendita = prezzoVendita;
+        this.scorta = scorta;
+        this.scortaMin = scorteMin;
+        this.prodottiVenduti = prodottiVenduti;
+    }
+    
     public int getId() {
         return id;
     }
@@ -67,8 +77,8 @@ public class Prodotto {
     public int compraProdotto(int quantita){
         //controllo se ci sono scorte sufficenti
         if(!controlloScorta(quantita))return 0;
-        scorta =-quantita;
-        prodottiVenduti =+ quantita;
+        scorta -= quantita;
+        prodottiVenduti += quantita;
         //controllo se i prodotti sono scesi sotto la soglia minima
         if(controlloScortaMin())return 1;
         return 2;

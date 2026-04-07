@@ -5,6 +5,7 @@
 package aurelimartinellipichiumagazzino;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 /**
@@ -14,12 +15,14 @@ import javax.swing.table.TableModel;
 public class FrmMagazzino extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmMagazzino.class.getName());
-
+    private GestioneFile gF = new GestioneFile();
     /**
      * Creates new form FrmMagazzino
      */
     public FrmMagazzino() {
         initComponents();
+        gF.caricaProdottiDaFile();
+        aggiornaTabella();
     }
 
     /**
@@ -43,6 +46,8 @@ public class FrmMagazzino extends javax.swing.JFrame {
         btnNuovoProdotto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Magazzino");
+        setResizable(false);
 
         pnlGestioneMagazzino.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -119,8 +124,8 @@ public class FrmMagazzino extends javax.swing.JFrame {
             pnlGestioneMagazzinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlGestioneMagazzinoLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlGestioneMagazzinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRifornisci)
                     .addComponent(btnVendi, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,7 +177,7 @@ public class FrmMagazzino extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(lblGestioneMagazzino)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnNuovoProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNuovoProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
         pnlTitoloGestioneMagazzinoLayout.setVerticalGroup(
@@ -211,26 +216,31 @@ public class FrmMagazzino extends javax.swing.JFrame {
      * @param evt
      */
     private void btnNuovoProdottoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuovoProdottoActionPerformed
-        FrmProdotto frmProdotto = new FrmProdotto();
+        DefaultTableModel model = (DefaultTableModel)tblGestioneMagazzino.getModel();
+        FrmProdotto frmProdotto = new FrmProdotto(model);
         frmProdotto.setVisible(true);
     }//GEN-LAST:event_btnNuovoProdottoActionPerformed
 
     private void btnEliminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminaActionPerformed
-        if (tblGestioneMagazzino.getSelectedRow() == -1){
-            JOptionPane.showMessageDialog(this, "Seleziona una riga della tabella", "Errore", JOptionPane.ERROR_MESSAGE);
-            return;
+        if(!controlloRigaSelezionata())return;
+        if(GestioneMagazzino.getMagazzino().rimuoviProdotto(getIdProdottoSelezionato())){
+            JOptionPane.showMessageDialog(this, "Il prodotto è stato eliminato", "Informazioni", JOptionPane.INFORMATION_MESSAGE);
+            gF.eliminaProdotto(getIdProdottoSelezionato());
         }
-        if(GestioneMagazzino.getMagazzino().rimuoviProdotto(getIdProdottoSelezionato())) JOptionPane.showMessageDialog(this, "Il prodotto è stato eliminato", "Informazioni", JOptionPane.INFORMATION_MESSAGE);
+        aggiornaTabella();
     }//GEN-LAST:event_btnEliminaActionPerformed
 
     private void btnRifornisciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRifornisciActionPerformed
-        FrmRifornisci frmRifornisci = new FrmRifornisci();
+        if(!controlloRigaSelezionata())return;
+        DefaultTableModel model = (DefaultTableModel)tblGestioneMagazzino.getModel();
+        FrmRifornisci frmRifornisci = new FrmRifornisci(GestioneMagazzino.getMagazzino().trovaProdottoPerId(getIdProdottoSelezionato()), model);
         frmRifornisci.setVisible(true);
     }//GEN-LAST:event_btnRifornisciActionPerformed
 
     private void btnVendiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendiActionPerformed
-        //aggiungere un try-catch
-        FrmVendi frmVendi = new FrmVendi(GestioneMagazzino.getMagazzino().trovaProdottoPerId(getIdProdottoSelezionato()));
+        if(!controlloRigaSelezionata())return;
+        DefaultTableModel model = (DefaultTableModel)tblGestioneMagazzino.getModel();
+        FrmVendi frmVendi = new FrmVendi(GestioneMagazzino.getMagazzino().trovaProdottoPerId(getIdProdottoSelezionato()), model);
         frmVendi.setVisible(true);
     }//GEN-LAST:event_btnVendiActionPerformed
 
@@ -248,6 +258,32 @@ public class FrmMagazzino extends javax.swing.JFrame {
       TableModel model = tblGestioneMagazzino.getModel();
       int id = (int)model.getValueAt(rigaSelezionata, 0);
       return id;     
+    }
+    
+    /**
+     * Metodo per vedere se l'utente ha selezionato almeno una riga
+     * @return true se uan riga e' selezionata, false se non e' selezionata nessuna riga
+     */
+    public boolean controlloRigaSelezionata(){
+        if (tblGestioneMagazzino.getSelectedRow() == -1){
+            JOptionPane.showMessageDialog(this, "Seleziona una riga della tabella", "Errore", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        return true;
+    }
+    
+    public String getStato(Prodotto p){
+        if(p.controlloScortaMin()) return "ok";
+        return "da rifornire";
+    }
+    
+    public void aggiornaTabella(){
+        DefaultTableModel model = (DefaultTableModel)tblGestioneMagazzino.getModel();
+        model.setRowCount(0);
+        for(Prodotto p : GestioneMagazzino.getMagazzino().getListaProdotti()){
+            model.addRow(new Object[]{p.getId(), p.getNome(), p.getPrezzoAcquisto(), p.getPrezzoVendita(), p.getScorta(), getStato(p)});
+        }
+
     }
     /**
      * @param args the command line arguments

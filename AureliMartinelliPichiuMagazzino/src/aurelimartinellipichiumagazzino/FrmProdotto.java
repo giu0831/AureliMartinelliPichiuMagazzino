@@ -5,6 +5,7 @@
 package aurelimartinellipichiumagazzino;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,12 +14,15 @@ import javax.swing.JOptionPane;
 public class FrmProdotto extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmProdotto.class.getName());
-
+    private DefaultTableModel model;
+    private GestioneFile gF = new GestioneFile();
     /**
      * Creates new form FrmProdotto
+     * @param model tabella form magazzino
      */
-    public FrmProdotto() {
+    public FrmProdotto(DefaultTableModel model) {
         initComponents();
+        this.model = model;
     }
 
     /**
@@ -51,6 +55,7 @@ public class FrmProdotto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Aggiungi nuovo prodotto");
+        setResizable(false);
 
         pnlNuovoProdotto.setBackground(new java.awt.Color(246, 246, 246));
 
@@ -207,14 +212,18 @@ public class FrmProdotto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Inserisci tutti i dati corretamente", "Errore", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        int id = GestioneMagazzino.getMagazzino().getListaProdotti().size(),
+        int id = GestioneMagazzino.getNuovoId(),
         prezzoAcquisto = Integer.parseInt(txtPrezzoAcquisto.getText()), 
         prezzoVendita = Integer.parseInt(txtPrezzoVendita.getText()), 
         scortaIniziale = Integer.parseInt(txtScortaIniziale.getText()), 
         scortaMinima = Integer.parseInt(txtScortaMinima.getText());
         String nome = txtNomeProdotto.getText();
+        GestioneMagazzino.incrementaId();
         svuotaTextBox();
-        GestioneMagazzino.getMagazzino().registraProdotto(new Prodotto(id, nome, prezzoAcquisto, prezzoVendita, scortaIniziale, scortaMinima));
+        Prodotto p = new Prodotto(id, nome, prezzoAcquisto, prezzoVendita, scortaIniziale, scortaMinima);
+        GestioneMagazzino.getMagazzino().registraProdotto(p);
+        gF.salvaKeyFile(p);
+        aggiornaTabella();
     }//GEN-LAST:event_btnAggiungiActionPerformed
 
     /**
@@ -230,14 +239,15 @@ public class FrmProdotto extends javax.swing.JFrame {
      */
     public boolean controlloInt(){
         try {
-        Integer.parseInt(txtPrezzoAcquisto.getText());
-        Integer.parseInt(txtPrezzoVendita.getText());
-        Integer.parseInt(txtScortaIniziale.getText());
-        Integer.parseInt(txtScortaMinima.getText());
+        int prezzoAcquisto = Integer.parseInt(txtPrezzoAcquisto.getText()), 
+        prezzoVendita = Integer.parseInt(txtPrezzoVendita.getText()), 
+        scortaIniziale = Integer.parseInt(txtScortaIniziale.getText()), 
+        scortaMinima = Integer.parseInt(txtScortaMinima.getText());
+        if(prezzoAcquisto < 1 || prezzoVendita < 1 || scortaIniziale < 0 || scortaMinima < 0) return false;
+        } catch (NumberFormatException e) {
+            return false;
+        } 
         return true;
-    } catch (NumberFormatException e) {
-        return false;
-    } 
     }
     /**
      * Metodo per svuotare le textbox
@@ -248,6 +258,26 @@ public class FrmProdotto extends javax.swing.JFrame {
         txtPrezzoVendita.setText("");
         txtScortaIniziale.setText("");
         txtScortaMinima.setText("");
+    }
+    
+    /**
+     * Metodo per vedere lo stato di un prodotto
+     * @param p prodotto
+     * @return stato del prodotto
+     */
+    public String getStato(Prodotto p){
+        if(p.controlloScortaMin()) return "ok";
+        return "da rifornire";
+    }
+    /**
+     * Metodo per aggiornare la tabella
+     */
+    public void aggiornaTabella(){
+        model.setRowCount(0);
+        for(Prodotto p : GestioneMagazzino.getMagazzino().getListaProdotti()){
+            model.addRow(new Object[]{p.getId(), p.getNome(), p.getPrezzoAcquisto(), p.getPrezzoVendita(), p.getScorta(), getStato(p)});
+        }
+
     }
     /**
      * @param args the command line arguments
@@ -270,8 +300,6 @@ public class FrmProdotto extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrmProdotto().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

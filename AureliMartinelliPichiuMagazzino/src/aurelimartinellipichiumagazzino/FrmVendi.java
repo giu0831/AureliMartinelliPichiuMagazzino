@@ -4,6 +4,9 @@
  */
 package aurelimartinellipichiumagazzino;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
@@ -12,13 +15,16 @@ public class FrmVendi extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmVendi.class.getName());
     private Prodotto p;
+    private DefaultTableModel model;
     /**
      * Creates new form FrmProdotto
      * @param p prodotto da rifornire
      */
-    public FrmVendi(Prodotto p) {
+    public FrmVendi(Prodotto p, DefaultTableModel model) {
         initComponents();
         this.p = p;
+        this.model = model;
+        aggiornaLabel();
     }
 
     /**
@@ -32,28 +38,26 @@ public class FrmVendi extends javax.swing.JFrame {
 
         jRadioButton1 = new javax.swing.JRadioButton();
         pnlRifornimento = new javax.swing.JPanel();
-        lblNomeProdotto = new javax.swing.JLabel();
-        lblID = new javax.swing.JLabel();
         lblQuantita = new javax.swing.JLabel();
         txtQuantita = new javax.swing.JTextField();
         btnAnnulla = new javax.swing.JButton();
         btnConferma = new javax.swing.JButton();
-        lblSaldoAttuale = new javax.swing.JLabel();
+        lblIDProdotto = new javax.swing.JLabel();
+        lblID = new javax.swing.JLabel();
+        lblNomeProdotto = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
+        lblQuantitaAttuale = new javax.swing.JLabel();
+        lblNQuantitaAttuale = new javax.swing.JLabel();
         pnlTitoloRifornimento = new javax.swing.JPanel();
         lblNuovaVendita = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Aggiungi nuovo prodotto");
+        setTitle("Vendi Prodotto");
+        setResizable(false);
 
         pnlRifornimento.setBackground(new java.awt.Color(246, 246, 246));
-
-        lblNomeProdotto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblNomeProdotto.setText("Nome prodotto: nome");
-
-        lblID.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblID.setText("ID: 0");
 
         lblQuantita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
         lblQuantita.setLabelFor(txtQuantita);
@@ -71,43 +75,76 @@ public class FrmVendi extends javax.swing.JFrame {
         btnConferma.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         btnConferma.setForeground(new java.awt.Color(255, 255, 255));
         btnConferma.setText("Conferma");
+        btnConferma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfermaActionPerformed(evt);
+            }
+        });
 
-        lblSaldoAttuale.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        lblSaldoAttuale.setText("Saldo attuale: 0");
+        lblIDProdotto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblIDProdotto.setText("ID");
+
+        lblID.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblID.setText("ID: ");
+
+        lblNomeProdotto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNomeProdotto.setText("Nome");
+
+        lblNome.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblNome.setText("Nome prodotto: ");
+
+        lblQuantitaAttuale.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblQuantitaAttuale.setText("Quantita' attuale: ");
+
+        lblNQuantitaAttuale.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNQuantitaAttuale.setText("Numero");
 
         javax.swing.GroupLayout pnlRifornimentoLayout = new javax.swing.GroupLayout(pnlRifornimento);
         pnlRifornimento.setLayout(pnlRifornimentoLayout);
         pnlRifornimentoLayout.setHorizontalGroup(
             pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRifornimentoLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(24, 24, 24)
+                .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRifornimentoLayout.createSequentialGroup()
-                        .addComponent(lblSaldoAttuale)
-                        .addGap(125, 125, 125)
-                        .addComponent(lblID)
-                        .addGap(8, 8, 8))
-                    .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblNomeProdotto)
-                        .addGroup(pnlRifornimentoLayout.createSequentialGroup()
-                            .addGap(59, 59, 59)
-                            .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(34, 34, 34)
-                            .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(lblQuantita)
-                        .addComponent(txtQuantita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(59, 59, 59)
+                        .addComponent(btnAnnulla, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblQuantita)
+                    .addComponent(txtQuantita, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRifornimentoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRifornimentoLayout.createSequentialGroup()
+                        .addComponent(lblQuantitaAttuale)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNQuantitaAttuale))
+                    .addGroup(pnlRifornimentoLayout.createSequentialGroup()
+                        .addComponent(lblNome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNomeProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblID)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblIDProdotto)))
+                .addGap(12, 12, 12))
         );
         pnlRifornimentoLayout.setVerticalGroup(
             pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRifornimentoLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(lblNomeProdotto)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSaldoAttuale)
-                    .addComponent(lblID))
-                .addGap(18, 18, 18)
+                    .addComponent(lblNome)
+                    .addComponent(lblNomeProdotto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblID)
+                    .addComponent(lblIDProdotto))
+                .addGap(14, 14, 14)
+                .addGroup(pnlRifornimentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblQuantitaAttuale)
+                    .addComponent(lblNQuantitaAttuale))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblQuantita)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtQuantita, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,6 +207,80 @@ public class FrmVendi extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAnnullaActionPerformed
 
+    private void btnConfermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfermaActionPerformed
+        if(!controlloInt()){
+            JOptionPane.showMessageDialog(this, "Inserisci un valore numerico maggiore di 0", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        int quantita = Integer.parseInt(txtQuantita.getText());
+        if(quantita < 1){
+            JOptionPane.showMessageDialog(this, "Inserisci un valore numerico maggiore di 0", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        mostraMessaggio(p.compraProdotto(quantita));
+        aggiornaTabella();
+        aggiornaLabel();
+    }//GEN-LAST:event_btnConfermaActionPerformed
+
+    /**
+     * Metodo per controllare se la textbox contiene un numero
+     * @return true se sono tutti numeri
+     */
+    public boolean controlloInt(){
+        try {
+        Integer.parseInt(txtQuantita.getText());
+        return true;
+    } catch (NumberFormatException e) {
+        return false;
+    } 
+    }
+    
+    public void aggiornaLabel(){
+        lblIDProdotto.setText(String.valueOf(p.getId()));
+        lblNomeProdotto.setText(p.getNome());
+        lblNQuantitaAttuale.setText(String.valueOf(p.getScorta()));
+    }
+    
+    /**
+     * Metodo per vedere lo stato di un prodotto
+     * @param p prodotto
+     * @return stato del prodotto
+     */
+    public String getStato(Prodotto p){
+        if(p.controlloScortaMin()) return "ok";
+        return "da rifornire";
+    }
+    /**
+     * Metodo per aggiornare la tabella
+     */
+    public void aggiornaTabella(){
+        model.setRowCount(0);
+        for(Prodotto p : GestioneMagazzino.getMagazzino().getListaProdotti()){
+            model.addRow(new Object[]{p.getId(), p.getNome(), p.getPrezzoAcquisto(), p.getPrezzoVendita(), p.getScorta(), getStato(p)});
+        }
+
+    }
+    
+    /**
+     * Metodo per far vedere un messaggio dopo aver comprato un prodotto
+     * @param risultato
+     */
+    public void mostraMessaggio(int risultato){
+        if(risultato == 0){
+            JOptionPane.showMessageDialog(this, "Non ci sono scorte sufficenti", "Info", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(risultato == 1){
+            JOptionPane.showMessageDialog(this, "Il prodotto e' stato comprato", "Info", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(risultato == 2){
+            int scelta = JOptionPane.showConfirmDialog(this, "Il prodotto e' stato comprato, e le scorte sono scese sotto la soglia minima, vuoi rifornirlo ora?", "Info", JOptionPane.YES_NO_OPTION);
+            if (scelta == JOptionPane.YES_OPTION) {
+                FrmRifornisci frmRifornisci = new FrmRifornisci(p, model);
+                frmRifornisci.setVisible(true);
+                this.dispose();
+            }
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -197,10 +308,13 @@ public class FrmVendi extends javax.swing.JFrame {
     private javax.swing.JButton btnConferma;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblID;
+    private javax.swing.JLabel lblIDProdotto;
+    private javax.swing.JLabel lblNQuantitaAttuale;
+    private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblNomeProdotto;
     private javax.swing.JLabel lblNuovaVendita;
     private javax.swing.JLabel lblQuantita;
-    private javax.swing.JLabel lblSaldoAttuale;
+    private javax.swing.JLabel lblQuantitaAttuale;
     private javax.swing.JPanel pnlRifornimento;
     private javax.swing.JPanel pnlTitoloRifornimento;
     private javax.swing.JTextField txtQuantita;

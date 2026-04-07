@@ -4,6 +4,8 @@
  */
 package aurelimartinellipichiumagazzino;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Aureli Giulia, Martinelli Alessandra e Pichiu Florin
@@ -11,12 +13,13 @@ package aurelimartinellipichiumagazzino;
 public class FrmStatistiche extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmStatistiche.class.getName());
-
+    private Statistiche statistiche = new Statistiche(GestioneMagazzino.getMagazzino());
     /**
      * Creates new form FrmProdotto
      */
     public FrmStatistiche() {
         initComponents();
+        aggiornaLabel();
     }
 
     /**
@@ -28,49 +31,58 @@ public class FrmStatistiche extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton1 = new javax.swing.JRadioButton();
         pnlNuovoProdotto = new javax.swing.JPanel();
-        lblQuantitaProdottoCostoso = new javax.swing.JLabel();
-        lblQuantitaProdottoEconomico = new javax.swing.JLabel();
-        lblQuantitaProdottoMinVenduto = new javax.swing.JLabel();
-        lblQuantitaProdottoMaxVenduto = new javax.swing.JLabel();
+        lblPCostoso = new javax.swing.JLabel();
+        lblPEconomico = new javax.swing.JLabel();
+        lblProdottoMinVenduto = new javax.swing.JLabel();
+        lblProdottoMaxVenduto = new javax.swing.JLabel();
         lblProdottoCostoso = new javax.swing.JLabel();
         lblProdottoEconomico = new javax.swing.JLabel();
         lblMaxVenduto = new javax.swing.JLabel();
         lblMinVenduto = new javax.swing.JLabel();
+        btnAggiorna = new javax.swing.JButton();
         pnlTitoloNuovoProdotto = new javax.swing.JPanel();
         lblStatistiche = new javax.swing.JLabel();
 
-        jRadioButton1.setText("jRadioButton1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Aggiungi nuovo prodotto");
+        setTitle("Statistiche");
+        setResizable(false);
 
         pnlNuovoProdotto.setBackground(new java.awt.Color(246, 246, 246));
 
-        lblQuantitaProdottoCostoso.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        lblQuantitaProdottoCostoso.setLabelFor(lblQuantitaProdottoCostoso);
-        lblQuantitaProdottoCostoso.setText("Prodotto costoso");
+        lblPCostoso.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        lblPCostoso.setLabelFor(lblPCostoso);
+        lblPCostoso.setText("Prodotto costoso");
 
-        lblQuantitaProdottoEconomico.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        lblQuantitaProdottoEconomico.setLabelFor(lblQuantitaProdottoEconomico);
-        lblQuantitaProdottoEconomico.setText("Prodotto eco");
+        lblPEconomico.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        lblPEconomico.setLabelFor(lblPEconomico);
+        lblPEconomico.setText("Prodotto eco");
 
-        lblQuantitaProdottoMinVenduto.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        lblQuantitaProdottoMinVenduto.setLabelFor(lblQuantitaProdottoMinVenduto);
-        lblQuantitaProdottoMinVenduto.setText("MinVenduto");
+        lblProdottoMinVenduto.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        lblProdottoMinVenduto.setLabelFor(lblProdottoMinVenduto);
+        lblProdottoMinVenduto.setText("MinVenduto");
 
-        lblQuantitaProdottoMaxVenduto.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
-        lblQuantitaProdottoMaxVenduto.setLabelFor(lblQuantitaProdottoMaxVenduto);
-        lblQuantitaProdottoMaxVenduto.setText("MaxVenduto");
+        lblProdottoMaxVenduto.setFont(new java.awt.Font("Yu Gothic UI", 0, 18)); // NOI18N
+        lblProdottoMaxVenduto.setLabelFor(lblProdottoMaxVenduto);
+        lblProdottoMaxVenduto.setText("MaxVenduto");
 
-        lblProdottoCostoso.setText("Nome");
+        lblProdottoCostoso.setText("-");
 
-        lblProdottoEconomico.setText("Nome");
+        lblProdottoEconomico.setText("-");
 
-        lblMaxVenduto.setText("Nome");
+        lblMaxVenduto.setText("-");
 
-        lblMinVenduto.setText("Nome");
+        lblMinVenduto.setText("-");
+
+        btnAggiorna.setBackground(new java.awt.Color(102, 102, 255));
+        btnAggiorna.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnAggiorna.setForeground(new java.awt.Color(255, 255, 255));
+        btnAggiorna.setText("Aggiorna");
+        btnAggiorna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAggiornaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlNuovoProdottoLayout = new javax.swing.GroupLayout(pnlNuovoProdotto);
         pnlNuovoProdotto.setLayout(pnlNuovoProdottoLayout);
@@ -80,8 +92,8 @@ public class FrmStatistiche extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblProdottoCostoso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblQuantitaProdottoMaxVenduto)
-                    .addComponent(lblQuantitaProdottoCostoso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblProdottoMaxVenduto)
+                    .addComponent(lblPCostoso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblMaxVenduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
@@ -89,35 +101,41 @@ public class FrmStatistiche extends javax.swing.JFrame {
                         .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
                                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblQuantitaProdottoMinVenduto)
-                                    .addComponent(lblQuantitaProdottoEconomico))
+                                    .addComponent(lblProdottoMinVenduto)
+                                    .addComponent(lblPEconomico))
                                 .addGap(0, 31, Short.MAX_VALUE))
                             .addComponent(lblProdottoEconomico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(lblMinVenduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlNuovoProdottoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAggiorna, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         pnlNuovoProdottoLayout.setVerticalGroup(
             pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlNuovoProdottoLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(30, 30, 30)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblQuantitaProdottoCostoso)
-                    .addComponent(lblQuantitaProdottoEconomico))
+                    .addComponent(lblPCostoso)
+                    .addComponent(lblPEconomico))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblProdottoCostoso)
                     .addComponent(lblProdottoEconomico))
                 .addGap(39, 39, 39)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblQuantitaProdottoMaxVenduto)
-                    .addComponent(lblQuantitaProdottoMinVenduto))
+                    .addComponent(lblProdottoMaxVenduto)
+                    .addComponent(lblProdottoMinVenduto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlNuovoProdottoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMaxVenduto)
                     .addComponent(lblMinVenduto))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAggiorna, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pnlTitoloNuovoProdotto.setBackground(new java.awt.Color(224, 224, 224));
@@ -163,6 +181,21 @@ public class FrmStatistiche extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAggiornaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiornaActionPerformed
+        aggiornaLabel();
+    }//GEN-LAST:event_btnAggiornaActionPerformed
+
+    public void aggiornaLabel(){
+        ArrayList<Prodotto> prodotti = statistiche.vediStatistiche();
+        if(prodotti.get(0) == null) lblProdottoCostoso.setText("-");
+        else lblProdottoCostoso.setText(prodotti.get(0).getNome() + ", costo: " + prodotti.get(0).getPrezzoVendita());
+        if(prodotti.get(1) == null) lblProdottoEconomico.setText("-");
+        else lblProdottoEconomico.setText(prodotti.get(1).getNome() + ", costo: " + prodotti.get(1).getPrezzoVendita());
+        if(prodotti.get(2) == null) lblMaxVenduto.setText("-");
+        else lblMaxVenduto.setText(prodotti.get(2).getNome() + ", quantita' venduta: " + prodotti.get(2).getProdottiVenduti());
+        if(prodotti.get(3) == null) lblProdottoCostoso.setText("-");
+        else lblMinVenduto.setText(prodotti.get(3).getNome() + ", quantita' venduta: " + prodotti.get(3).getProdottiVenduti());
+    }
     /**
      * @param args the command line arguments
      */
@@ -189,15 +222,15 @@ public class FrmStatistiche extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JButton btnAggiorna;
     private javax.swing.JLabel lblMaxVenduto;
     private javax.swing.JLabel lblMinVenduto;
+    private javax.swing.JLabel lblPCostoso;
+    private javax.swing.JLabel lblPEconomico;
     private javax.swing.JLabel lblProdottoCostoso;
     private javax.swing.JLabel lblProdottoEconomico;
-    private javax.swing.JLabel lblQuantitaProdottoCostoso;
-    private javax.swing.JLabel lblQuantitaProdottoEconomico;
-    private javax.swing.JLabel lblQuantitaProdottoMaxVenduto;
-    private javax.swing.JLabel lblQuantitaProdottoMinVenduto;
+    private javax.swing.JLabel lblProdottoMaxVenduto;
+    private javax.swing.JLabel lblProdottoMinVenduto;
     private javax.swing.JLabel lblStatistiche;
     private javax.swing.JPanel pnlNuovoProdotto;
     private javax.swing.JPanel pnlTitoloNuovoProdotto;

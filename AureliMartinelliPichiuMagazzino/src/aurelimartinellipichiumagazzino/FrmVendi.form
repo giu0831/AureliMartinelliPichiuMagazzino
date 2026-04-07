@@ -10,7 +10,8 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Aggiungi nuovo prodotto"/>
+    <Property name="title" type="java.lang.String" value="Vendi Prodotto"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -63,41 +64,57 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="lblSaldoAttuale" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="lblID" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="btnAnnulla" min="-2" pref="96" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="btnConferma" min="-2" pref="96" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblNomeProdotto" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                              <Component id="btnAnnulla" min="-2" pref="96" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="btnConferma" min="-2" pref="96" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lblQuantita" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtQuantita" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lblQuantita" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtQuantita" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="17" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblQuantitaAttuale" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblNQuantitaAttuale" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblNome" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblNomeProdotto" min="-2" pref="85" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="lblID" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblIDProdotto" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Component id="lblNomeProdotto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblSaldoAttuale" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblNomeProdotto" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="lblID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblIDProdotto" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblQuantitaAttuale" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblNQuantitaAttuale" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lblQuantita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtQuantita" min="-2" pref="28" max="-2" attributes="0"/>
@@ -112,22 +129,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblNomeProdotto">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Nome prodotto: nome"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblID">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="ID: 0"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblQuantita">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -165,13 +166,56 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Conferma"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfermaActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblSaldoAttuale">
+        <Component class="javax.swing.JLabel" name="lblIDProdotto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Saldo attuale: 0"/>
+            <Property name="text" type="java.lang.String" value="ID"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblID">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ID: "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblNomeProdotto">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nome"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblNome">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nome prodotto: "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblQuantitaAttuale">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quantita&apos; attuale: "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblNQuantitaAttuale">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Numero"/>
           </Properties>
         </Component>
       </SubComponents>
