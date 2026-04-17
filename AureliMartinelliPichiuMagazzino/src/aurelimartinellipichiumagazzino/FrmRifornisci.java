@@ -62,18 +62,19 @@ public class FrmRifornisci extends javax.swing.JFrame {
 
         pnlRifornimento.setBackground(new java.awt.Color(246, 246, 246));
 
-        lblNome.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblNome.setText("Nome prodotto: ");
 
-        lblID.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblID.setText("ID: ");
 
-        lblQuantita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblQuantita.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblQuantita.setLabelFor(txtQuantita);
         lblQuantita.setText("Quantità da aggiungere:");
 
-        btnAnnulla.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnAnnulla.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnAnnulla.setText("Annulla");
+        btnAnnulla.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAnnulla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAnnullaActionPerformed(evt);
@@ -81,16 +82,17 @@ public class FrmRifornisci extends javax.swing.JFrame {
         });
 
         btnConferma.setBackground(new java.awt.Color(102, 102, 255));
-        btnConferma.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnConferma.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnConferma.setForeground(new java.awt.Color(255, 255, 255));
         btnConferma.setText("Conferma");
+        btnConferma.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnConferma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfermaActionPerformed(evt);
             }
         });
 
-        lblQuantitaAttuale.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblQuantitaAttuale.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblQuantitaAttuale.setText("Quantita' attuale: ");
 
         lblNomeProdotto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -99,7 +101,7 @@ public class FrmRifornisci extends javax.swing.JFrame {
         lblNQuantitaAttuale.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblNQuantitaAttuale.setText("Numero");
 
-        lblQuantitaMinima.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblQuantitaMinima.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblQuantitaMinima.setText("Quantita' minima: ");
 
         lblNQuantitaMinima.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N

@@ -59,28 +59,29 @@ public class FrmProdotto extends javax.swing.JFrame {
 
         pnlNuovoProdotto.setBackground(new java.awt.Color(246, 246, 246));
 
-        lblNomeProdotto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblNomeProdotto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblNomeProdotto.setLabelFor(txtNomeProdotto);
         lblNomeProdotto.setText("Nome prodotto");
 
-        lblPrezzoAcquisto.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblPrezzoAcquisto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblPrezzoAcquisto.setLabelFor(txtPrezzoAcquisto);
         lblPrezzoAcquisto.setText("P. Acquisto (€)");
 
-        lblPrezzoVendita.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblPrezzoVendita.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblPrezzoVendita.setLabelFor(txtPrezzoVendita);
         lblPrezzoVendita.setText("P. Vendita (€)");
 
-        lblScortaIniziale.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblScortaIniziale.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblScortaIniziale.setLabelFor(txtScortaIniziale);
         lblScortaIniziale.setText("Scorta Iniziale");
 
-        lblScortaMinima.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        lblScortaMinima.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblScortaMinima.setLabelFor(txtScortaMinima);
         lblScortaMinima.setText("Scorta Minima");
 
-        btnAnnulla.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnAnnulla.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnAnnulla.setText("Annulla");
+        btnAnnulla.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAnnulla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAnnullaActionPerformed(evt);
@@ -88,9 +89,10 @@ public class FrmProdotto extends javax.swing.JFrame {
         });
 
         btnAggiungi.setBackground(new java.awt.Color(102, 102, 255));
-        btnAggiungi.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        btnAggiungi.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         btnAggiungi.setForeground(new java.awt.Color(255, 255, 255));
         btnAggiungi.setText("Aggiungi");
+        btnAggiungi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAggiungi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAggiungiActionPerformed(evt);
